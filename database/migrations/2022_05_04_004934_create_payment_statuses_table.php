@@ -16,7 +16,6 @@ class CreatePaymentStatusesTable extends Migration
         Schema::create('payment_statuses', function (Blueprint $table) {
             $table->id();
             $table->string('name', 100);
-            $table->timestamps();
         });
     }
 

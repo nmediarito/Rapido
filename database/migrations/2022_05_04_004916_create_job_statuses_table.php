@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\JobStatus;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -16,8 +17,16 @@ class CreateJobStatusesTable extends Migration
         Schema::create('job_statuses', function (Blueprint $table) {
             $table->id();
             $table->string('name', 100);
-            $table->timestamps();
         });
+
+        $data = [
+            ['id' => 1, 'name' => 'Pending',],
+            ['id' => 2, 'name' => 'Accepted',],
+            ['id' => 3, 'name' => 'Completed',],
+        ];
+
+        JobStatus::insert($data);
+
     }
 
     /**

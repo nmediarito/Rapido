@@ -4,7 +4,7 @@ use App\Http\Controllers\CustomerDashboardController;
 use App\Http\Controllers\MechanicDashboardController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
-
+use App\Http\Controllers\VehicleController;
 
 /*
 |--------------------------------------------------------------------------
@@ -31,7 +31,12 @@ Route::prefix('customer')->group(function () {
     Route::get('/submit', [CustomerDashboardController::class, 'requestView'])->name('customer.request.view');
     Route::post('/submit', [CustomerDashboardController::class, 'requestAction'])->name('customer.request.action');
     Route::get('/submissions', [CustomerDashboardController::class, 'submissions'])->name('customer.submissions');
-    Route::post('/login', [UserController::class, 'customerLogin']);
+    Route::get('/profile', [CustomerDashboardController::class, 'profileView'])->name('customer.profile.view');
+    Route::put('/profile', [UserController::class, 'edit'])->name('customer.profile.action');
+    Route::get('/registerVehicle', [VehicleController::class, 'registerView'])->name('customer.register.view');
+    Route::post('/registerVehicle', [VehicleController::class, 'registerAction'])->name('customer.register.action');
+    Route::get('/viewVehicles', [VehicleController::class, 'viewVehicles'])->name('customer.vehicles.view');
+    Route::get('/login', [UserController::class, 'customerLogin']);
 });
 
 Route::prefix('mechanic')->group(function () {
