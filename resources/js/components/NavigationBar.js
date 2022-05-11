@@ -5,7 +5,7 @@ import logo from '../images/rapidologo.png'
 function Navbar() {
     return (
     <nav className="navbar navbar-light navbar-expand-md bg-white justify-content-center">
-        <div className="container">
+        <div className="container-fluid">
 
             <a href="/" className="navbar-brand d-flex w-50 me-auto fs-4"><img src={logo} alt="logo" /></a>
 
@@ -23,7 +23,7 @@ function Navbar() {
                         <a className="nav-link text-secondary" href="">Services</a>
                     </li>
                     <li className="nav-item fs-4">
-                        <a className="nav-link text-secondary" href="#">Pricing</a>
+                        <a className="nav-link text-secondary" href="/pricing">Pricing</a>
                     </li>
                     <li className="nav-item fs-4">
                         <a className="nav-link text-secondary" href="#">Testimonials</a>
@@ -33,17 +33,33 @@ function Navbar() {
                     </li>
                 </ul>
 
-                <ul className="nav navbar-nav ms-auto w-100 justify-content-end">
-                    <li className="nav-item ">
-                        <a className="nav-link fs-4 text-body fw-bold" href="#">Sign In</a>
-                    </li>
-                    <li className="nav-item">
-                        <a className="nav-link" href="#">
-                            <button type="button" className="btn btn-outline-primary">Call: 1300 468 000</button>
-                        </a>
-                    </li>
-                </ul>
+                <ul className="nav navbar-nav w-100 justify-content-end">
 
+                    <div className="dropdown">
+                        <button className="btn" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                            <p className="nav-link fs-5 text-body fw-bold">Sign In</p>
+                        </button>
+                        <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                            <li><a className="dropdown-item" href="/signin/customer">Customer Sign In</a></li>
+                            <li><a className="dropdown-item" href="/signin/mechanic">Mechanic Sign In</a></li>
+                        </ul>
+                    </div>
+
+                    <div className="dropdown">
+                        <button className="btn" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                            <p className="nav-link fs-5 text-body fw-bold">Register</p>
+                        </button>
+                        <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                            <li><a className="dropdown-item" href="/register/customer">Customer Register</a></li>
+                            <li><a className="dropdown-item" href="/register/mechanic">Mechanic Register</a></li>
+                        </ul>
+                    </div>
+
+                    <a className="nav-link pt-6" href="#">
+                        <button type="button" className="btn btn-outline-primary">Call: 1300 468 000</button>
+                    </a>
+
+                </ul>
             </div>
         </div>
     </nav>
