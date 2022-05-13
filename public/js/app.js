@@ -5627,13 +5627,13 @@ function Navbar() {
               children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("li", {
                 children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("a", {
                   className: "dropdown-item",
-                  href: "/signin/customer",
+                  href: "/customer/login",
                   children: "Customer Sign In"
                 })
               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("li", {
                 children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("a", {
                   className: "dropdown-item",
-                  href: "/signin/mechanic",
+                  href: "/mechanic/login",
                   children: "Mechanic Sign In"
                 })
               })]
@@ -5656,13 +5656,13 @@ function Navbar() {
               children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("li", {
                 children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("a", {
                   className: "dropdown-item",
-                  href: "/register/customer",
+                  href: "/customer/registration",
                   children: "Customer Register"
                 })
               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("li", {
                 children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("a", {
                   className: "dropdown-item",
-                  href: "/register/mechanic",
+                  href: "/mechanic/registration",
                   children: "Mechanic Register"
                 })
               })]

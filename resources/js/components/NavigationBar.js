@@ -40,8 +40,8 @@ function Navbar() {
                             <p className="nav-link fs-5 text-body fw-bold">Sign In</p>
                         </button>
                         <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                            <li><a className="dropdown-item" href="/signin/customer">Customer Sign In</a></li>
-                            <li><a className="dropdown-item" href="/signin/mechanic">Mechanic Sign In</a></li>
+                            <li><a className="dropdown-item" href="/customer/login">Customer Sign In</a></li>
+                            <li><a className="dropdown-item" href="/mechanic/login">Mechanic Sign In</a></li>
                         </ul>
                     </div>
 
@@ -50,8 +50,8 @@ function Navbar() {
                             <p className="nav-link fs-5 text-body fw-bold">Register</p>
                         </button>
                         <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                            <li><a className="dropdown-item" href="/register/customer">Customer Register</a></li>
-                            <li><a className="dropdown-item" href="/register/mechanic">Mechanic Register</a></li>
+                            <li><a className="dropdown-item" href="/customer/registration">Customer Register</a></li>
+                            <li><a className="dropdown-item" href="/mechanic/registration">Mechanic Register</a></li>
                         </ul>
                     </div>
 

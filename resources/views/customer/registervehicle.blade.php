@@ -1,7 +1,7 @@
 @extends('layouts.dashboard')
 
 @section('title')
-    Request service
+    Register vehicle
 @endsection
 
 @section('content')
@@ -16,23 +16,23 @@
                             @csrf
 
                             <div class="form-group py-2">
-                                <input type="text" class="form-control" id="name" name="name" placeholder="Name">
+                                <input type="text" class="form-control" id="name" name="name" placeholder="Name" required>
                             </div>
 
                             <div class="form-group py-2">
-                                <input type="text" class="form-control" id="brand" name="brand" placeholder="Brand">
+                                <input type="text" class="form-control" id="brand" name="brand" placeholder="Brand" required>
                             </div>
 
                             <div class="form-group py-2">
-                                <input type="text" class="form-control" id="model" name="model" placeholder="Model">
+                                <input type="text" class="form-control" id="model" name="model" placeholder="Model" required>
                             </div>
 
                             <div class="form-group py-2">
-                                <input type="text" class="form-control" id="transmission" name="transmission" placeholder="Transmission">
+                                <input type="text" class="form-control" id="transmission" name="transmission" placeholder="Transmission" required>
                             </div>
 
                             <div class="form-group py-2">
-                                <input type="text" class="form-control" id="plate_number" name="plate_number" placeholder="Plate number">
+                                <input type="text" class="form-control" id="plate_number" name="plate_number" placeholder="Plate number" required>
                             </div>
 
                             <button type="submit" class="btn btn-primary py-2">Submit vehicle</button>

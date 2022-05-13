@@ -17,7 +17,7 @@
 
                             <div class="form-group py-2">
                                 <label for="password">Failure Type</label>
-                                <select class="form-select py-2" aria-label="Default select example" id="failure_type_id" name="failure_type_id">
+                                <select class="form-select py-2" aria-label="Default select example" id="failure_type_id" name="failure_type_id" required>
                                     @foreach($failureTypes  as $ft)
                                         <option value={{ $ft->id }}>{{$ft->name}}</option>
                                     @endforeach
@@ -26,7 +26,7 @@
 
                             <div class="form-group py-2">
                                 <label for="password">Vehicle</label>
-                                <select class="form-select py-2" aria-label="Default select example" id="vehicle_id" name="vehicle_id">
+                                <select class="form-select py-2" aria-label="Default select example" id="vehicle_id" name="vehicle_id" required>
                                     @foreach($vehicles as $v)
                                         <option value={{ $v->id }}>{{ $v->name }}</option>
                                     @endforeach
@@ -35,7 +35,7 @@
 
                             <div class="form-group py-2">
                                 <label for="password">Description</label>
-                                <textarea class="form-control" rows="4" cols="50"  id="description" name="description" placeholder="My car has a battery issue"></textarea>
+                                <textarea class="form-control" rows="4" cols="50"  id="description" name="description" placeholder="My car has a battery issue" required></textarea>
                             </div>
 
                             <button type="submit" class="btn btn-primary py-2">Submit request</button>

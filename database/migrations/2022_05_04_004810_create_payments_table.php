@@ -16,9 +16,10 @@ class CreatePaymentsTable extends Migration
         Schema::create('payments', function (Blueprint $table) {
             $table->id();
             $table->unsignedInteger('total');
-            $table->unsignedInteger('payment_status_id');
-            $table->unsignedInteger('job_id');
-            $table->unsignedInteger('user_id');
+            $table->unsignedInteger('payment_status_id')->nullable();
+            $table->unsignedInteger('payment_type_id')->nullable();
+            $table->unsignedInteger('job_id')->nullable();
+            $table->unsignedInteger('user_id')->nullable();
             $table->unsignedInteger('professional_id')->nullable();
             $table->timestamps();
         });

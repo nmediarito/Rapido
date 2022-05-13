@@ -1,7 +1,7 @@
-@extends('layouts.dashboard')
+@extends('layouts.mechanicdashboard')
 
 @section('title')
-    Customer Dashboard
+    Mechanic Dashboard
 @endsection
 
 @section('content')

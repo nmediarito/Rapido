@@ -14,6 +14,8 @@ class Professional extends Authenticatable
 
     protected $primaryKey = 'id';
 
+    protected $table = 'professionals';
+
     /**
      * The attributes that are mass assignable.
      *

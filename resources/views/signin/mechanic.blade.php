@@ -5,16 +5,22 @@
 @endsection
 
 @section('content')
-
     <div class="container">
         <div class="row py-lg-5">
-            <div class="col-lg-6 col-md-8 mx-auto">
-                <h1 class="fw-light">Sign in and let’s make someone’s day<p class="text-primary">BETTER!</p></h1>
+            <div class="col-lg-6 col-md-8 mx-auto text-center">
+                <h1 class="fw-light">Sign in and let's make someone's day <span class="text-primary">BETTER</span>!</h1>
                 <div class="card text-center">
-                    <div class="card-body">
-                        <h4 class="text-bold">Mechanic sign in to Rapido</h4>
+                    <div class="card-body py-2">
 
-                        <form method="POST" action="/customer/login">
+                        @if($errors->first('message'))
+                            <div class="bg-danger text-white py-2">
+                                {{ $errors->first('message') }}
+                            </div>
+                        @endif
+
+                        <h4 class="text-bold py-2">Mechanic sign in to Rapido</h4>
+
+                        <form method="POST" action="{{ route('mechanic.login.action') }}">
 
                             @csrf
 
@@ -23,10 +29,22 @@
                                 <input type="email" class="form-control" id="email" name="email" placeholder="Enter email">
                             </div>
 
+                            @if($errors->first('email'))
+                                <div class="text-danger">
+                                    {{ $errors->first('email') }}
+                                </div>
+                            @endif
+
                             <div class="form-group py-2">
                                 <label for="password">Password</label>
                                 <input type="password" class="form-control" id="password" name="password" placeholder="Password">
                             </div>
+
+                            @if($errors->first('password'))
+                                <div class="text-danger">
+                                    {{ $errors->first('password') }}
+                                </div>
+                            @endif
 
                             <div class="form-group py-2">
                                 <a href="/forgotpassword">Forgot password?</a>

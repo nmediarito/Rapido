@@ -33,54 +33,33 @@
                         </a>
                         <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
                             <li class="nav-item">
-                                <a href="{{ route('customer.request.view') }}" class="nav-link align-middle px-0">
-                                    <i class="fs-4 bi-house"></i> <span class="ms-1 d-none d-sm-inline fs-4">Request service</span>
+                                <a href="{{ route('mechanic.available.jobs') }}" class="nav-link align-middle px-0">
+                                    <i class="fs-4 bi-house"></i> <span class="ms-1 d-none d-sm-inline fs-4">Available Jobs (within 50km)</span>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="{{ route('customer.submissions') }}" class="nav-link align-middle px-0">
-                                    <i class="fs-4 bi-house"></i> <span class="ms-1 d-none d-sm-inline fs-4">Submitted service requests</span>
+                                <a href="{{ route('mechanic.accepted.jobs') }}" class="nav-link align-middle px-0">
+                                    <i class="fs-4 bi-house"></i> <span class="ms-1 d-none d-sm-inline fs-4">Accepted Jobs</span>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="{{ route('customer.history') }}" class="nav-link align-middle px-0">
-                                    <i class="fs-4 bi-house"></i> <span class="ms-1 d-none d-sm-inline fs-4">Callout History</span>
+                                <a href="{{ route('mechanic.jobs.history') }}" class="nav-link align-middle px-0">
+                                    <i class="fs-4 bi-house"></i> <span class="ms-1 d-none d-sm-inline fs-4">History</span>
                                 </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="{{ route('bank.view') }}" class="nav-link align-middle px-0">
-                                    <i class="fs-4 bi-house"></i> <span class="ms-1 d-none d-sm-inline fs-4">Bank details</span>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="{{ route('bank.view') }}" class="nav-link align-middle px-0">
-                                    <i class="fs-4 bi-house"></i> <span class="ms-1 d-none d-sm-inline fs-4">Membership details</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#submenu2" data-bs-toggle="collapse" class="nav-link px-0 align-middle ">
-                                    <i class="fs-4 bi-bootstrap"></i> <span class="ms-1 d-none d-sm-inline fs-4">Vehicle options</span></a>
-                                <ul class="collapse nav flex-column ms-1" id="submenu2" data-bs-parent="#menu">
-                                    <li class="w-100">
-                                        <a href="{{ route('customer.register.view') }}" class="nav-link px-0"> <span class="d-none d-sm-inline fs-4">Register a vehicle</span></a>
-                                    </li>
-                                    <li>
-                                        <a href="{{ route('customer.vehicles.view') }}" class="nav-link px-0"> <span class="d-none d-sm-inline fs-4">View registered vehicles</span></a>
-                                    </li>
-                                </ul>
                             </li>
                         </ul>
                         <hr>
                         <div class="dropdown pb-4">
                             <a href="#" class="d-flex align-items-center text-dark text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
                                 <img src="https://github.com/mdo.png" alt="hugenerd" width="100" height="100" class="rounded-circle">
-                                <span class="d-none d-sm-inline mx-1 fs-4">{{ auth()->user()->name }}</span>
+                                <span class="d-none d-sm-inline mx-1 fs-4">{{ Auth::guard('professional')->user()->name }}</span>
                             </a>
                             <ul class="dropdown-menu dropdown-menu-dark text-small shadow">
-                                <li><a class="dropdown-item" href="{{ route('customer.profile.view') }}">Edit profile</a></li>
-                                <li><a class="dropdown-item" href="{{ route('membership.register.view') }}"">Register for a membership</a></li>
-                                <li><a class="dropdown-item" href="{{ route('balance.view') }}">Check balance</a></li>
-                                <li><a class="dropdown-item" href="{{ route('customer.logout') }}">Sign out</a></li>
+                                <li><a class="dropdown-item" href="{{ route('mechanic.profile.view') }}">Edit profile</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" href="{{ route('mechanic.logout') }}">Sign out</a></li>
                             </ul>
                         </div>
                     </div>

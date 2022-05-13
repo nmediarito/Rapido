@@ -1,11 +1,11 @@
 <?php
 
-use App\Models\MembershipType;
+use App\Models\PaymentType;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateMembershipTypesTable extends Migration
+class CreatePaymentTypesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -14,17 +14,17 @@ class CreateMembershipTypesTable extends Migration
      */
     public function up()
     {
-        Schema::create('membership_types', function (Blueprint $table) {
+        Schema::create('payment_types', function (Blueprint $table) {
             $table->id();
-            $table->string('name', 100);
+            $table->string('name');
         });
 
         $data = [
-            ['id' => 1, 'name' => 'On Demand',],
-            ['id' => 2, 'name' => 'Platinum',],
+            ['id' => 1, 'name' => 'Credit',],
+            ['id' => 2, 'name' => 'Debit',],
         ];
 
-        MembershipType::insert($data);
+        PaymentType::insert($data);
     }
 
     /**
@@ -34,6 +34,6 @@ class CreateMembershipTypesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('membership_types');
+        Schema::dropIfExists('payment_types');
     }
 }

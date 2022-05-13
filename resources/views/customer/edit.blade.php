@@ -18,37 +18,11 @@
                             @method('PUT')
 
                             <div class="form-group py-2">
-                                <input type="email" class="form-control" id="email" name="email" placeholder="Enter email" value={{ auth()->user()->email }}>
+                                <input type="text" disabled class="form-control" id="membership" name="membership" value='Membership Number: {{ (isset($user->membership->membership_number)) ? $user->membership->membership_number : 'N/A' }}'' required>
                             </div>
 
-                            @error('email')
-                                <div class="text-danger">
-                                    {{ $message }}
-                                </div>
-                            @enderror
-
                             <div class="form-group py-2">
-                                <input type="password" class="form-control" id="password" name="password" placeholder="Password">
-                            </div>
-
-                            @error('password')
-                                <div class="text-danger">
-                                    {{ $message }}
-                                </div>
-                            @enderror
-
-                            <div class="form-group py-2">
-                                <input type="password" class="form-control" id="password" name="password_confirmation" placeholder="Confirm Password">
-                            </div>
-
-                            @error('password_confirmation')
-                                <div class="text-danger">
-                                    {{ $message }}
-                                </div>
-                            @enderror
-
-                            <div class="form-group py-2">
-                                <input type="text" class="form-control" id="name" name="name" placeholder="Name" value={{ auth()->user()->name }}>
+                                <input type="text" disabled class="form-control" id="membership_type_id" name="membership_type_id" value='Membership Type: {!! (isset($user->membership->membership_type_id) && $user->membership->membership_type_id == 1) ? 'On Demand' : '' !!}{!! (isset($user->membership->membership_type_id) && $user->membership->membership_type_id == 2) ? 'Platinum' : '' !!}' required>
                             </div>
 
                             @error('name')
@@ -58,11 +32,20 @@
                             @enderror
 
                             <div class="form-group py-2">
-                                <select class="form-select py-2" aria-label="Default select example" id="gender" name="gender" value={{ auth()->user()->gender }}>
-                                    <option selected>Gender</option>
-                                    <option value="M">Male</option>
-                                    <option value="F">Female</option>
-                                    <option value="N">N/A</option>
+                                <input type="text" class="form-control" id="name" name="name" placeholder="Name" value={{ $user->name }} required>
+                            </div>
+
+                            @error('name')
+                                <div class="text-danger">
+                                    {{ $message }}
+                                </div>
+                            @enderror
+
+                            <div class="form-group py-2">
+                                <select class="form-select py-2" aria-label="Default select example" id="gender" name="gender" required>
+                                    <option value="M" {{ (auth()->user()->gender == 'M') ? 'selected' : '' }}>Male</option>
+                                    <option value="F" {{ (auth()->user()->gender == 'F') ? 'selected' : '' }}>Female</option>
+                                    <option value="N" {{ (auth()->user()->gender == 'N') ? 'selected' : '' }}>N/A</option>
                                 </select>
                             </div>
 
@@ -73,11 +56,11 @@
                             @enderror
 
                             <div class="form-group py-2">
-                                <input type="text" class="form-control" id="phone" name="phone" placeholder="Phone" value={{ auth()->user()->phone }}>
+                                <input type="text" class="form-control" id="phone" name="phone" placeholder="Phone" value={{ auth()->user()->phone }} required>
                             </div>
 
                             <div class="form-group py-2">
-                                <input type="date" class="form-control" id="dob" name="dob" placeholder="Date of Birth" value={{ auth()->user()->dob }}>
+                                <input type="date" class="form-control" id="dob" name="dob" placeholder="Date of Birth" value={{ auth()->user()->dob }} required>
                             </div>
 
                             @error('dob')

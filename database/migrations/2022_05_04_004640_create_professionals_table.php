@@ -21,12 +21,12 @@ class CreateProfessionalsTable extends Migration
             $table->string('password');
             $table->string('employment_type');
             $table->string('mvrl', 7)->unique();
-            $table->string('gender');
+            $table->string('gender')->nullable();
             $table->string('phone');
             $table->date('dob');
             $table->string('qualification');
-            $table->decimal('long', 10, 7);
-            $table->decimal('lat', 10, 7);
+            $table->decimal('long', 10, 7)->nullable();
+            $table->decimal('lat', 10, 7)->nullable();
             $table->rememberToken();
             $table->timestamps();
         });
