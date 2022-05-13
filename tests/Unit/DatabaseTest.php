@@ -5,6 +5,7 @@ namespace Tests\Feature;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Tests\TestCase;
+use DB;
 
 class DatabaseTest extends TestCase
 {
@@ -16,9 +17,16 @@ class DatabaseTest extends TestCase
      * Check if all the required values have inserted set after the migration on these specific tables
      */
 
-    public function test_database_connection()
-    {
-
+    public function test_database_connection() {
+        //check if database server is on and connected with the app
+        if(DB::connection()->getPDO()){
+            //passes
+            $this->assertTrue(true);
+        } else {
+            //fails
+            //NOTE: OTHER TESTS WILL ALSO FAIL AS THEY REQUIRE DATABASE CONNECTION
+            $this->assertTrue(false);
+        }
     }
 
     public function test_membership_types_table()
