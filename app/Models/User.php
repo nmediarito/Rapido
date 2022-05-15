@@ -14,6 +14,8 @@ class User extends Authenticatable
 
     protected $primaryKey = 'id';
 
+    protected $table = 'users';
+
     /**
      * The attributes that are mass assignable.
      *
@@ -48,4 +50,23 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+
+    public function vehicles(){
+        return $this->hasMany(Vehicle::class, 'user_id', 'id');
+    }
+
+    public function jobs(){
+        return $this->hasMany(Jobs::class, 'customer_id', 'id');
+    }
+
+    public function membership()
+    {
+        return $this->hasOne(Membership::class, 'user_id');
+    }
+
+    public function balance()
+    {
+        return $this->hasOne(Balance::class, 'user_id');
+    }
 }

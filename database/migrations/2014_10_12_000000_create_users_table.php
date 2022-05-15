@@ -1,5 +1,6 @@
 <?php
 
+use Carbon\Carbon;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -19,9 +20,9 @@ class CreateUsersTable extends Migration
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
-            $table->string('gender');
-            $table->string('phone');
-            $table->date('dob');
+            $table->string('gender')->default('N');
+            $table->string('phone')->default('0');
+            $table->date('dob')->default(Carbon::now());
             $table->rememberToken();
             $table->timestamps();
         });

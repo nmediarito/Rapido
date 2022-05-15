@@ -16,14 +16,14 @@ class CreateJobsTable extends Migration
         Schema::create('jobs', function (Blueprint $table) {
             $table->id();
             $table->unsignedInteger('customer_id');
-            $table->unsignedInteger('professional_id');
-            $table->unsignedInteger('vehicle_id');
+            $table->unsignedInteger('professional_id')->nullable();
+            $table->unsignedInteger('vehicle_id')->nullable();
             $table->unsignedInteger('job_status_id');
-            $table->unsignedInteger('payment_id');
+            $table->unsignedInteger('payment_id')->nullable();
             $table->unsignedInteger('failure_type_id');
             $table->string('description');
-            $table->decimal('long', 10, 7);
-            $table->decimal('lat', 10, 7);
+            $table->decimal('long', 10, 7)->nullable();
+            $table->decimal('lat', 10, 7)->nullable();
             $table->timestamps();
         });
     }
