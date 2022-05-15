@@ -6,6 +6,7 @@ use App\Models\FailureType;
 use App\Models\Jobs;
 use App\Models\JobStatus;
 use App\Models\User;
+use App\Models\Professional;
 use Illuminate\Http\Request;
 use App\Models\Vehicle;
 use Auth;
@@ -82,5 +83,18 @@ class CustomerDashboardController extends Controller
         return view('customer.edit',[
             'user' => User::with('membership')->findOrFail(auth()->user()->id),
         ]);
+    }
+
+    public function rateView($mechanicId) {
+        return view('customer.rate',[
+            'mechanic' => Professional::findOrFail($mechanicId)
+        ]);
+    }
+
+    public function rateAction($mechanicId, Request $request) {
+        //user rate the mechanic who did the service
+        auth()->user()->rate(Professional::findOrFail($mechanicId), $request->input('rating'));
+
+        return redirect()->route('customer.history');
     }
 }

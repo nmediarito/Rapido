@@ -19,6 +19,7 @@
                             <th scope="col">Status</th>
                             <th scope="col">Failure Type</th>
                             <th scope="col">Description</th>
+                            <th scope="col"></th>
                           </tr>
                         </thead>
                         <tbody>
@@ -36,6 +37,7 @@
                                 </td>
                                 <td>{{ $s->failureType->name }}</td>
                                 <td>{{ $s->description }}</td>
+                                <td><a href="{{ route('rate.view', $s->professional_id) }}">Rate mechanic</a></td>
                             </tr>
                             @endforeach
                         </tbody>

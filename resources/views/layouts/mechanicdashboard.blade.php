@@ -50,6 +50,10 @@
                         </ul>
                         <hr>
                         <div class="dropdown pb-4">
+                            <div class="clearfix">
+                                <span class="fs-4 text-primary"><b>Average Rating:</b> {!! (!is_null(Auth::guard('professional')->user()->ratingsAvg())) ? number_format(Auth::guard('professional')->user()->ratingsAvg(), 2) : 'N/A' !!}</span><br/>
+                                <span class="fs-4 text-primary"><b>Rating Count:</b> {{ (!is_null(Auth::guard('professional')->user()->ratingsCount())) ? Auth::guard('professional')->user()->ratingsCount() : 'N/A' }}</span><br/>
+                            </div>
                             <a href="#" class="d-flex align-items-center text-dark text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
                                 <img src="https://github.com/mdo.png" alt="hugenerd" width="100" height="100" class="rounded-circle">
                                 <span class="d-none d-sm-inline mx-1 fs-4">{{ Auth::guard('professional')->user()->name }}</span>

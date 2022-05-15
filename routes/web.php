@@ -63,6 +63,8 @@ Route::prefix('customer')->group(function () {
     Route::get('/submissions', [CustomerDashboardController::class, 'submissions'])->name('customer.submissions');
     Route::get('/history', [CustomerDashboardController::class, 'calloutHistory'])->name('customer.history');
     Route::get('/profile', [CustomerDashboardController::class, 'profileView'])->name('customer.profile.view');
+    Route::get('/rate/{mechanicId}', [CustomerDashboardController::class, 'rateView'])->name('rate.view');
+    Route::post('/rate/{mechanicId}', [CustomerDashboardController::class, 'rateAction'])->name('rate.action');
     Route::put('/profile', [UserController::class, 'edit'])->name('customer.profile.action');
 
     //Membership

@@ -25,12 +25,6 @@
                                 <input type="text" disabled class="form-control" id="membership_type_id" name="membership_type_id" value='Membership Type: {!! (isset($user->membership->membership_type_id) && $user->membership->membership_type_id == 1) ? 'On Demand' : '' !!}{!! (isset($user->membership->membership_type_id) && $user->membership->membership_type_id == 2) ? 'Platinum' : '' !!}' required>
                             </div>
 
-                            @error('name')
-                                <div class="text-danger">
-                                    {{ $message }}
-                                </div>
-                            @enderror
-
                             <div class="form-group py-2">
                                 <input type="text" class="form-control" id="name" name="name" placeholder="Name" value={{ $user->name }} required>
                             </div>
