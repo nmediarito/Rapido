@@ -20,7 +20,7 @@
                         @endif
 
                         <div class="py-5 container">
-                            <h1 class="fw-light">Your total account balance: <p class="text-primary"> ${{ $balance->balance->total }} </p></h1>
+                            <h1 class="fw-light">Your total account balance: <p class="text-primary"> ${{ (!empty($balance->balance->total)) ? $balance->balance->total : '0' }} </p></h1>
                             <p class="lead text-muted">You may either deposit or withdraw below:</p>
 
                             <form method="POST" action="{{ route('balance.deposit') }}">
