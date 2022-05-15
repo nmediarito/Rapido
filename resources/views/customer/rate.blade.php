@@ -12,6 +12,16 @@
                 <div class="card text-center">
                     <div class="card-body">
 
+                        <div class="card text-center">
+                            <div class="card-body">
+                                <span class="fw-bold">Mechanic ID: </span> {{ $mechanic->id }} <br/>
+                                <span class="fw-bold">Mechanic Name: </span> {{ $mechanic->name }} <br/>
+                                <span class="fw-bold">Mechanic Qualification: </span> {{ $mechanic->qualification }} <br/>
+                                <span class="fw-bold">Mechanic Motor Vehicle Repairer Licence: </span> {{ $mechanic->mvrl }} <br/>
+                                <span class="fw-bold">Mechanic Email: </span> {{ $mechanic->email }} <br/>
+                            </div>
+                        </div>
+
                         <form method="POST" action="{{ route('rate.action', $mechanic->id) }}">
 
                             @csrf

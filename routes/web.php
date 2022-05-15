@@ -4,6 +4,7 @@ use App\Http\Controllers\Auth\MechanicController;
 use App\Http\Controllers\BalanceController;
 use App\Http\Controllers\CustomerDashboardController;
 use App\Http\Controllers\JobController;
+use App\Http\Controllers\MechanicBalanceController;
 use App\Http\Controllers\MechanicDashboardController;
 use App\Http\Controllers\MembershipController;
 use Illuminate\Support\Facades\Route;
@@ -104,6 +105,15 @@ Route::prefix('mechanic')->group(function () {
     Route::get('/acceptedjobs', [MechanicDashboardController::class, 'acceptedJobs'])->name('mechanic.accepted.jobs');
     Route::get('/profile', [MechanicDashboardController::class, 'profileView'])->name('mechanic.profile.view');
     Route::put('/profile', [MechanicController::class, 'edit'])->name('mechanic.profile.action');
+    Route::get('/ratings', [MechanicDashboardController::class, 'ratingsView'])->name('mechanic.ratings');
+
+    //Balance
+    Route::get('/balance', [MechanicBalanceController::class, 'balanceView'])->name('balance.view.mechanic');
+    Route::put('/balance/deposit', [MechanicBalanceController::class, 'deposit'])->name('balance.deposit.mechanic');
+    Route::put('/balance/withdraw', [MechanicBalanceController::class, 'withdraw'])->name('balance.withdraw.mechanic');
+    Route::get('/balance/view', [MechanicBalanceController::class, 'bankView'])->name('bank.view.mechanic');
+    Route::post('/balance/add', [MechanicBalanceController::class, 'bankAdd'])->name('bank.add.mechanic');
+    Route::put('/balance/edit', [MechanicBalanceController::class, 'bankEdit'])->name('bank.edit.mechanic');
 });
 
 //Jobs

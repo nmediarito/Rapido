@@ -47,5 +47,8 @@ class Professional extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-
+    public function balance()
+    {
+        return $this->hasOne(Balance::class, 'user_id');
+    }
 }

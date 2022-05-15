@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Jobs;
 use Auth;
+use DB;
 use Illuminate\Http\Request;
 
 class MechanicDashboardController extends Controller
@@ -33,5 +34,14 @@ class MechanicDashboardController extends Controller
 
     public function profileView() {
         return view('mechanic.edit');
+    }
+
+    public function ratingsView() {
+          return view('mechanic.ratings', [
+            'ratings' => DB::table('ratings')
+                ->select('*')
+                ->join('users', 'ratings.model_id', '=', 'users.id')
+                ->where('rateable_id', Auth::guard('professional')->user()->id)->get(),
+        ]);
     }
 }
