@@ -1,7 +1,7 @@
 @extends('layouts.mainlayout')
 
 @section('title')
-    Customer Sign In
+    Customer Registration
 @endsection
 
 @section('content')
@@ -12,7 +12,7 @@
                 <h1 class="fw-light">Join Rapido today and drive with peace<p class="text-primary">EVERYWHERE</p></h1>
                 <div class="card text-center">
                     <div class="card-body">
-                        <h4 class="text-bold">Customer Registration - On Demand</h4>
+                        <h4 class="text-bold">Customer Registration</h4>
 
                         @error('gender')
                             <div class="text-danger">
@@ -88,6 +88,35 @@
                             </div>
 
                             @error('dob')
+                                <div class="text-danger">
+                                    {{ $message }}
+                                </div>
+                            @enderror
+
+                            <h4 class="text-bold py-2">Bank details</h4>
+
+                            <div class="form-group py-2">
+                                <input type="text" class="form-control" id="account_number" name="account_number" placeholder="Account Number" required>
+                            </div>
+
+                            <div class="form-group py-2">
+                                <input type="date" class="form-control" id="expiry_date" name="expiry_date" placeholder="Expiry Date" required>
+                            </div>
+
+                            <div class="form-group py-2">
+                                <input type="text" class="form-control" id="cvv" name="cvv" placeholder="CVV" required>
+                            </div>
+
+                            <h4 class="text-bold py-2">Membership</h4>
+
+                            <div class="form-group py-2">
+                                <select class="form-select py-2" aria-label="Default select example" id="membership_type_id" name="membership_type_id">
+                                    <option value=1>On Demand</option>
+                                    <option value=2>Platinum</option>
+                                </select>
+                            </div>
+
+                            @error('membership_type_id')
                                 <div class="text-danger">
                                     {{ $message }}
                                 </div>

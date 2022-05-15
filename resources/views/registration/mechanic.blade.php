@@ -127,6 +127,20 @@
                                 </div>
                             @enderror
 
+                            <h4 class="text-bold py-2">Bank details</h4>
+
+                            <div class="form-group py-2">
+                                <input type="text" class="form-control" id="account_number" name="account_number" placeholder="Account Number" required>
+                            </div>
+
+                            <div class="form-group py-2">
+                                <input type="date" class="form-control" id="expiry_date" name="expiry_date" placeholder="Expiry Date" required>
+                            </div>
+
+                            <div class="form-group py-2">
+                                <input type="text" class="form-control" id="cvv" name="cvv" placeholder="CVV" required>
+                            </div>
+
                             <div class="form-group py-2">
                                 <small class="form-text text-muted">We'll never share your email or password with anyone else.</small>
                             </div>

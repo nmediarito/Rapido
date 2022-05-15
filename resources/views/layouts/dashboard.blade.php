@@ -48,7 +48,7 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="{{ route('bank.view.mechanic') }}" class="nav-link align-middle px-0">
+                                <a href="{{ route('bank.view') }}" class="nav-link align-middle px-0">
                                     <i class="fs-4 bi-house"></i> <span class="ms-1 d-none d-sm-inline fs-4">Bank details</span>
                                 </a>
                             </li>

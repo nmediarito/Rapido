@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Models\Balance;
 use App\Models\Professional;
 use Illuminate\Support\Facades\Hash;
 use Auth;
@@ -58,6 +59,14 @@ class MechanicController extends Controller
         $newProfessional->qualification = $request->input('qualification');
         $newProfessional->dob = $request->input('dob');
         $newProfessional->save();
+
+        $bank = new Balance();
+        $bank->user_id = $newProfessional->id;
+        $bank->total = 0;
+        $bank->account_number = $request->input('account_number');
+        $bank->expiry_date = $request->input('expiry_date');
+        $bank->cvv = $request->input('cvv');
+        $bank->save();
 
         //sign user in
         auth()->guard('professional')->attempt($request->only('email', 'password'));

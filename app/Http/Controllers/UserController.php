@@ -3,7 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use App\Models\Balance;
+use App\Models\Membership;
 use App\Models\User;
+use Carbon\Carbon;
+use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Hash;
 use Auth;
 use Illuminate\Support\Facades\Session;
@@ -54,6 +58,21 @@ class UserController extends Controller
         $newUser->phone = $request->input('phone');
         $newUser->dob = $request->input('dob');
         $newUser->save();
+
+        $bank = new Balance();
+        $bank->user_id = $newUser->id;
+        $bank->total = 0;
+        $bank->account_number = $request->input('account_number');
+        $bank->expiry_date = $request->input('expiry_date');
+        $bank->cvv = $request->input('cvv');
+        $bank->save();
+
+        $membership = new Membership();
+        $membership->membership_type_id = $request->input('membership_type_id');
+        $membership->user_id = $newUser->id;
+        $membership->membership_number = Str::random(7);
+        $membership->renewed_date = Carbon::now();
+        $membership->save();
 
         //sign user in
         auth()->attempt($request->only('email', 'password'));

@@ -12,8 +12,8 @@
                 <h1 class="fw-light">Ride with peace, we’ve got you <p class="text-primary">COVERED!</p></h1>
                 <p class="lead text-muted">Australia’s leading road side assistance provided, with flexible models based on your needs</p>
                 <p>
-                <a href="#" class="btn btn-primary my-2">Get started</a>
-                <a href="#" class="btn btn-primary my-2">Mechanic Registration</a>
+                <a href="{{ route('customer.registration.view') }}" class="btn btn-primary my-2">Get started</a>
+                <a href="{{ route('mechanic.registration.view') }}" class="btn btn-primary my-2">Mechanic Registration</a>
                 </p>
             </div>
         </div>
@@ -74,7 +74,7 @@
                         <li>Battery Discounts</li>
                         <li>Base Rate $10 (final pricing based on job)</li>
                     </ul>
-                    <button type="button" class="w-100 btn btn-lg btn-primary">Go On Demand</button>
+                    <a href="{{ route('customer.registration.view') }}" class="btn btn-primary w-100">Go On Demand</a>
                     </div>
                 </div>
             </div>
@@ -92,7 +92,7 @@
                         <li>Battery Discounts</li>
                         <li>No Extra Charges</li>
                     </ul>
-                    <button type="button" class="w-100 btn btn-lg btn-primary" href="">Go Platinum</button>
+                    <a href="{{ route('customer.registration.view') }}" class="btn btn-primary w-100">Go On Platinum</a>
                     </div>
                 </div>
             </div>
