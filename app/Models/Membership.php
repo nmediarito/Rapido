@@ -7,6 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Membership extends Model
 {
+    protected $fillable = [
+        'membership_type_id'
+    ];
     use HasFactory;
 
     public function user()

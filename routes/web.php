@@ -30,6 +30,15 @@ Route::get('/pricing', function () {
     return view('pricing');
 });
 
+Route::get('/about', function () {
+    return view('about');
+});
+
+Route::get('/services', function () {
+    return view('services');
+});
+
+
 Route::prefix('signin')->group(function () {
     Route::get('/customer', function () {
         return view('signin.customer');
@@ -70,13 +79,14 @@ Route::prefix('customer')->group(function () {
 
     //Membership
     Route::get('/registerMembership', [MembershipController::class, 'registerMembershipView'])->name('membership.register.view');
-    Route::post('/registerMembership', [MembershipController::class, 'registerMembershipAction'])->name('membership.register.action');
+    Route::put('/registerMembership', [MembershipController::class, 'registerMembershipAction'])->name('membership.register.action');
 
     //Balance
     Route::get('/balance', [BalanceController::class, 'balanceView'])->name('balance.view');
     Route::put('/balance/deposit', [BalanceController::class, 'deposit'])->name('balance.deposit');
     Route::put('/balance/withdraw', [BalanceController::class, 'withdraw'])->name('balance.withdraw');
     Route::get('/balance/view', [BalanceController::class, 'bankView'])->name('bank.view');
+    Route::get('/job/invoices/view', [BalanceController::class, 'jobInvoices'])->name('job.invoices.view');
     Route::post('/balance/add', [BalanceController::class, 'bankAdd'])->name('bank.add');
     Route::put('/balance/edit', [BalanceController::class, 'bankEdit'])->name('bank.edit');
 

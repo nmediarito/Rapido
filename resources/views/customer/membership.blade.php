@@ -23,11 +23,12 @@
                         <form method="POST" action="{{ route('membership.register.action') }}">
 
                             @csrf
+                            @method('PUT')
 
                             <div class="form-group py-2">
                                 <select class="form-select py-2" aria-label="Default select example" id="membership_type_id" name="membership_type_id">
-                                    <option value=1>On Demand</option>
-                                    <option value=2>Platinum</option>
+                                    <option value=1 {{ ($user->membership->membership_type_id === 1) ? 'selected' : '' }}>On Demand</option>
+                                    <option value=2 {{ ($user->membership->membership_type_id === 2) ? 'selected' : ''  }}>Platinum</option>
                                 </select>
                             </div>
 

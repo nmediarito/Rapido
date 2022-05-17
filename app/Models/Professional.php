@@ -51,4 +51,10 @@ class Professional extends Authenticatable
     {
         return $this->hasOne(Balance::class, 'user_id');
     }
+
+    public function payment()
+    {
+        return $this->belongsTo(Payment::class, 'id', 'professional_id');
+    }
+
 }

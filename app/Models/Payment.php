@@ -9,4 +9,14 @@ class Payment extends Model
 {
     use HasFactory;
 
+    public function job()
+    {
+        return $this->hasOne(Jobs::class);
+    }
+
+    public function professional()
+    {
+        return $this->hasOne(Professional::class, 'id', 'professional_id');
+    }
+
 }

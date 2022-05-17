@@ -11,6 +11,15 @@
                 <h1 class="fw-light">Submit a service request</h1>
                 <div class="card text-center">
                     <div class="card-body">
+
+                        @if (Session::has('message'))
+                            <div class="alert alert-info">{{ Session::get('message') }}</div>
+                        @endif
+
+                        @if (Session::has('error'))
+                            <div class="alert alert-danger">{{ Session::get('error') }}</div>
+                        @endif
+
                         <form method="POST" action="{{ route('customer.request.action') }}">
 
                             @csrf

@@ -17,19 +17,13 @@ function Navbar() {
 
                 <ul className="navbar-nav w-100 justify-content-center">
                     <li className="nav-item fs-4">
-                        <a className="nav-link text-secondary" href="#">About</a>
+                        <a className="nav-link text-secondary" href="/about">About</a>
                     </li>
                     <li className="nav-item fs-4">
-                        <a className="nav-link text-secondary" href="">Services</a>
+                        <a className="nav-link text-secondary" href="/services">Services</a>
                     </li>
                     <li className="nav-item fs-4">
                         <a className="nav-link text-secondary" href="/pricing">Pricing</a>
-                    </li>
-                    <li className="nav-item fs-4">
-                        <a className="nav-link text-secondary" href="#">Testimonials</a>
-                    </li>
-                    <li className="nav-item fs-4">
-                        <a className="nav-link text-secondary" href="">Help</a>
                     </li>
                 </ul>
 

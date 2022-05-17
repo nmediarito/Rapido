@@ -65,7 +65,7 @@
                                 <span class="fs-4 text-primary"><b>Rating Count:</b> {{ (!is_null(Auth::guard('professional')->user()->ratingsCount())) ? Auth::guard('professional')->user()->ratingsCount() : 'N/A' }}</span><br/>
                             </div>
                             <a href="#" class="d-flex align-items-center text-dark text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
-                                <img src="https://github.com/mdo.png" alt="hugenerd" width="100" height="100" class="rounded-circle">
+                                <img src="https://www.gravatar.com/avatar/00000000000000000000000000000000?d=mp&f=y" width="100" height="100" class="rounded-circle">
                                 <span class="d-none d-sm-inline mx-1 fs-4">{{ Auth::guard('professional')->user()->name }}</span>
                             </a>
                             <ul class="dropdown-menu dropdown-menu-dark text-small shadow">

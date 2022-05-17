@@ -23,6 +23,7 @@ class CreateJobStatusesTable extends Migration
             ['id' => 1, 'name' => 'Pending',],
             ['id' => 2, 'name' => 'Accepted',],
             ['id' => 3, 'name' => 'Completed',],
+            ['id' => 4, 'name' => 'Job In-Progress',],
         ];
 
         JobStatus::insert($data);

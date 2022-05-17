@@ -16,6 +16,13 @@ class BalanceController extends Controller
         ]);
     }
 
+    public function jobInvoices() {
+        return view('customer.jobinvoices',[
+            'balance' => User::with('balance')->findOrFail(auth()->user()->id),
+            'payments' => Payment::with('job', 'professional')->where('user_id', auth()->user()->id)->get(),
+        ]);
+    }
+
     public function deposit(Request $request) {
         $userBalance = User::with('balance')->findOrFail(auth()->user()->id);
         if($userBalance->balance == null) {
