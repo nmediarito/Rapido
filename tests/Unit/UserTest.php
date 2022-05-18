@@ -3,7 +3,6 @@
 namespace Tests\Unit;
 
 use App\Models\User;
-use Tests\Feature\DatabaseTest;
 use Tests\TestCase;
 
 class UserTest extends TestCase
@@ -32,8 +31,6 @@ class UserTest extends TestCase
 
     //Database has to be connected first
     public function test_customer_logout() {
-        $databaseConnection = new DatabaseTest();
-        if($databaseConnection == true) {
             //create fake user data row in users table
             $user = User::factory()->create();
             //log user in
@@ -41,8 +38,29 @@ class UserTest extends TestCase
             //logout route
             $response = $this->get('/customer/login');
             $response->assertStatus(200);
-        } else {
-            $this->assertFalse(false);
+    }
+
+    //Database has to be connected first
+    public function test_user_duplication() {
+        //create fake user data row in users table
+        $user1 = User::factory()->create();
+        $user2 = User::factory()->create();
+        //check if their ids are duplicates
+        $this->assertTrue($user1->id != $user2->id);
+    }
+
+    //Database has to be connected first
+    public function test_user_deletion() {
+        //create fake mechanic data row in professionals table
+        $user = User::factory()->create();
+
+        //gets the created professional record
+        $user = User::first();
+
+        if($user) {
+            $user->delete();
         }
+
+        $this->assertTrue(true);
     }
 }

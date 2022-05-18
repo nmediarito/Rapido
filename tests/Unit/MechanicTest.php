@@ -3,7 +3,6 @@
 namespace Tests\Unit;
 
 use App\Models\Professional;
-use Tests\Feature\DatabaseTest;
 use Tests\TestCase;
 
 class MechanicTest extends TestCase
@@ -33,8 +32,6 @@ class MechanicTest extends TestCase
 
     //Database has to be connected first
     public function test_mechanic_logout() {
-        $databaseConnection = new DatabaseTest();
-        if($databaseConnection->test_database_connection() == true) {
             //create fake mechanic data row in professionals table
             $professional = Professional::factory()->create();
             //log user in
@@ -42,9 +39,29 @@ class MechanicTest extends TestCase
             //logout route
             $response = $this->get('/mechanic/login');
             $response->assertStatus(200);
-        } else {
-            $this->assertFalse(false);
-        }
     }
 
+    //Database has to be connected first
+    public function test_mechanic_duplication() {
+        //create fake mechanic data row in professionals table
+        $professional1 = Professional::factory()->create();
+        $professional2 = Professional::factory()->create();
+        //check if their ids are duplicates
+        $this->assertTrue($professional1->id != $professional2->id);
+    }
+
+    //Database has to be connected first
+    public function test_mechanic_deletion() {
+        //create fake mechanic data row in professionals table
+        $professional = Professional::factory()->create();
+
+        //gets the created professional record
+        $professional = Professional::first();
+
+        if($professional) {
+            $professional->delete();
+        }
+
+        $this->assertTrue(true);
+    }
 }

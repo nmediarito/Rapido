@@ -20,7 +20,7 @@ class ProfessionalFactory extends Factory
             'email' => $this->faker->unique()->safeEmail(),
             'email_verified_at' => now(),
             'employment_Type' => 'CL',
-            'mvrl' => $this->faker->text(7),
+            'mvrl' => $this->faker->asciify(),
             'qualification' => $this->faker->text(7),
             'phone' => $this->faker->randomDigit(7),
             'dob' => Carbon::now(),
