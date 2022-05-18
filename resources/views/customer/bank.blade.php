@@ -25,6 +25,7 @@
                         <form method="POST" action="{{ route('bank.edit') }}">
 
                             @csrf
+                            @method('PUT')
 
                             <div class="form-group py-2">
                                 <input type="text" class="form-control" id="account_number" name="account_number" placeholder="Account Number" value={{ $user->balance->account_number }} required>
