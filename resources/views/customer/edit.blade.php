@@ -26,7 +26,7 @@
                             </div>
 
                             <div class="form-group py-2">
-                                <input type="text" class="form-control" id="name" name="name" placeholder="Name" value={{ $user->name }} required>
+                                <input type="text" class="form-control" id="name" name="name" placeholder="Name" value={{ auth()->user()->name }} required>
                             </div>
 
                             @error('name')

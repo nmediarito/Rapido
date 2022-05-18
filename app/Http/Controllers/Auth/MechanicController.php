@@ -92,7 +92,6 @@ class MechanicController extends Controller
 
         Professional::where('id', Auth::guard('professional')->user()->id)->update([
             'name'=> $request->input('name'),
-            'email' => $request->input('email'),
             'mvrl' => $request->input('mvrl'),
             'qualification' => $request->input('qualification'),
             'employment_type' => $request->input('employment_type'),
