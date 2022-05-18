@@ -87,7 +87,6 @@ class MechanicController extends Controller
         //validate few of the fields
         $this->validate($request, [
             'name' => 'required|min:3',
-            'email' => 'required|email',
             'gender' => 'required',
         ]);
 

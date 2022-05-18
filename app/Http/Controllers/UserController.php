@@ -93,17 +93,13 @@ class UserController extends Controller
         //validate few of the fields
         $this->validate($request, [
             'name' => 'required|min:3',
-            'email' => 'required|email',
             'gender' => 'required',
         ]);
 
         $user = auth()->user();
 
-
         $user->update([
             'name'=> $request->input('name'),
-            'email' => $request->input('email'),
-            'password' => Hash::make($request->input('password')),
             'gender' => $request->input('gender'),
             'phone' => $request->input('phone'),
             'dob' => $request->input('dob')
