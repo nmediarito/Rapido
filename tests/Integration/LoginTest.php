@@ -2,12 +2,13 @@
 
 namespace Tests\Integration;
 
+use App\Models\Professional;
 use App\Models\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Tests\TestCase;
 
-class Login extends TestCase
+class LoginTest extends TestCase
 {
 
     public function test_mechanic_login_form() {
@@ -18,7 +19,17 @@ class Login extends TestCase
     }
 
     public function test_mechanic_login() {
+        $professional = Professional::factory()->create();
 
+        $professionalExists = $professional ? true : false;
+
+        //check if user record exists
+        $this->assertTrue($professionalExists);
+
+        //log user in
+        $response = $this->actingAs($professional)->get('/mechanic/history');
+
+        return $response;
     }
 
     //Database has to be connected first
@@ -48,7 +59,7 @@ class Login extends TestCase
         $this->assertTrue($userExists);
 
         //log user in
-        $response = $this->actingAs($user)->get('/home');
+        $response = $this->actingAs($user)->get('/customer/home');
 
         $response->assertStatus(200);
     }
@@ -65,4 +76,3 @@ class Login extends TestCase
     }
 
 }
-
