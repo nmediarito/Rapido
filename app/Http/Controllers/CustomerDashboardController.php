@@ -82,6 +82,21 @@ class CustomerDashboardController extends Controller
                 $serviceRequest->long = NULL;
                 $serviceRequest->lat = NULL;
                 $serviceRequest->save();
+
+                //save payment related to the job
+                $payment = new Payment();
+                $payment->total = 0; //Amount transaction
+                $payment->payment_status_id = 1; //Pending until the job is completed
+                $payment->user_id = auth()->user()->id; //User
+                $payment->job_id = $serviceRequest->id; //Assign the job to the invoice
+                $payment->payment_type_id = 2; //Debit
+                $payment->save();
+
+                $serviceRequest->update([
+                    'payment_id' => $payment->id
+                ]);
+
+                return redirect()->route('customer.request.view')->with('message', 'Service request successful.');
         }
 
         return view('customer.submit',[
