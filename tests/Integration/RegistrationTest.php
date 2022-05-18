@@ -9,6 +9,7 @@ use Tests\TestCase;
 
 class RegistrationTest extends TestCase
 {
+    //Database has to be connected first
     public function test_registration_urls() {
         //check if the url status for registration page for customer is available or ok
         $response = $this->get('/register/customer');
@@ -21,6 +22,7 @@ class RegistrationTest extends TestCase
         $response->assertStatus(200);
     }
 
+    //Database has to be connected first
     public function test_mechanic_registration() {
         //check if the url status for registration page for customer is available or ok
         $registrationPage = $this->get('/register/mechanic');
@@ -43,6 +45,7 @@ class RegistrationTest extends TestCase
         $responseLogin->assertStatus(200);
     }
 
+    //Database has to be connected first
     public function test_customer_registration() {
         //check if the url status for registration page for customer is available or ok
         $registrationPage = $this->get('/register/customer');

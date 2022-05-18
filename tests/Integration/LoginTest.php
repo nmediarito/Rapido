@@ -43,6 +43,7 @@ class LoginTest extends TestCase
             $response->assertStatus(200);
     }
 
+    //Database has to be connected first
     public function test_customer_login_form() {
         //check if the url status for registration page for customer is available or ok
         $response = $this->get('/customer/login');
@@ -50,6 +51,7 @@ class LoginTest extends TestCase
         $response->assertStatus(200);
     }
 
+    //Database has to be connected first
     public function test_customer_login() {
         $user = User::factory()->create();
 
