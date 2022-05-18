@@ -19,7 +19,7 @@ class BalanceController extends Controller
     public function jobInvoices() {
         return view('customer.jobinvoices',[
             'balance' => User::with('balance')->findOrFail(auth()->user()->id),
-            'payments' => Payment::with('job', 'professional')->where('user_id', auth()->user()->id)->get(),
+            'payments' => Payment::with('job', 'professional')->where('user_id', auth()->user()->id)->whereIn('payment_status_id', [1,2,3])->get(),
         ]);
     }
 
