@@ -61,7 +61,7 @@ class MechanicController extends Controller
         $newProfessional->save();
 
         $bank = new Balance();
-        $bank->user_id = $newProfessional->id;
+        $bank->professional_id = $newProfessional->id;
         $bank->total = 0;
         $bank->account_number = $request->input('account_number');
         $bank->expiry_date = $request->input('expiry_date');

@@ -21,6 +21,11 @@ class Balance extends Model
         return $this->belongsTo(User::class, 'id', 'user_id');
     }
 
+    public function professional_balance()
+    {
+        return $this->belongsTo(User::class, 'id', 'professional_id');
+    }
+
     public function mechanicBalance()
     {
         return $this->belongsTo(Professional::class, 'id', 'user_id');

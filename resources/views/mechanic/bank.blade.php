@@ -11,7 +11,13 @@
 
                 @if(isset($user->balance))
                 <h1 class="fw-light">Your current bank details</h1>
+
                 <div class="card text-center">
+
+                    <div class="py-5 container">
+                        <h1 class="fw-light">Your total account balance: <p class="text-primary"> ${{ (!empty($user->balance->total)) ? $user->balance->total : '0' }} </p></h1>
+                    </div>
+
                     <div class="card-body">
 
                         @if (Session::has('message'))
