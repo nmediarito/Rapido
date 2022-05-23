@@ -62,7 +62,7 @@ class BalanceController extends Controller
                 $payment->payment_type_id = 2; //Debit
                 $payment->save();
 
-                $userBalance->balance->total = (int) $request->input('total') - $userBalance->balance->total;
+                $userBalance->balance->total = $userBalance->balance->total - (int) $request->input('total');
                 $userBalance->balance->save();
                 return redirect()->route('balance.view')->with('message', 'Transaction successful.');
             }

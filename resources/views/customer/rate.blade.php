@@ -1,14 +1,14 @@
 @extends('layouts.dashboard')
 
 @section('title')
-    Edit profile
+    Rate mechanice
 @endsection
 
 @section('content')
     <div class="container">
         <div class="row py-lg-5">
             <div class="col-lg-6 col-md-8 mx-auto text-center">
-                <h1 class="fw-light">Edit profile</h1>
+                <h1 class="fw-light">Rate the mechanic</h1>
                 <div class="card text-center">
                     <div class="card-body">
 
