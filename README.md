@@ -13,13 +13,17 @@ PHP, XAMPP, NodeJS, and composer
 
 Download and install PHP and XAMPP - https://www.apachefriends.org/download.html 
 Set "C:\xampp\php" in your PATH Environment Variable. Then restart the CMD prompt - Reference: https://stackoverflow.com/questions/31291317/php-is-not-recognized-as-an-internal-or-external-command-in-command-prompt 
+
 Download and install composer - https://getcomposer.org/download/ 
+
 Download and install NodeJS - https://nodejs.org/en/download/ 
 Restart your computer.
 
 These are the necessary softwares to run the application.
 
 The repository is available here: https://github.com/nmediarito/Rapido 
+
+
 
 Clone the repository:
 Open a terminal or command prompt and run the command below:
@@ -47,6 +51,8 @@ php artisan config:cache - This will create a cache file.
 php artisan route:cache - This will clear your route cache. 
 
 These commands will install the necessary dependencies and files to run the application.
+
+
 
 
 To start the application or website:
