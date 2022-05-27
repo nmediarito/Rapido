@@ -7,6 +7,72 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
+How to run Rapido:
+Required tools:
+PHP, XAMPP, NodeJS, and composer
+
+Download and install PHP and XAMPP - https://www.apachefriends.org/download.html 
+Set "C:\xampp\php" in your PATH Environment Variable. Then restart the CMD prompt - Reference: https://stackoverflow.com/questions/31291317/php-is-not-recognized-as-an-internal-or-external-command-in-command-prompt 
+Download and install composer - https://getcomposer.org/download/ 
+Download and install NodeJS - https://nodejs.org/en/download/ 
+Restart your computer.
+
+These are the necessary softwares to run the application.
+
+The repository is available here: https://github.com/nmediarito/Rapido 
+
+Clone the repository:
+Open a terminal or command prompt and run the command below:
+
+git clone https://github.com/nmediarito/Rapido.git
+
+Install the required files and dependencies:
+Open terminal or command prompt and go to the root folder of the project and type the commands below:
+
+composer install - This will install all the dependencies/libraries used for the project (PHP)
+
+npm install - This will install all the dependencies/libraries used for the project (NodeJS)
+
+copy .env.example .env - This will create a copy of the environment file in the root folder of the project (This is a command for Windows. You do not need to run this if you have already used the Ubuntu command below)
+
+cp.env.example .env - This will create a copy of the environment file in the root folder of the project (This is a command for Ubuntu. You do not need to run this if you have already used the Windows command above)
+
+Open the .env file and change the values of the database (DB_DATABASE, DB_USERNAME, DB_PASSWORD) to correspond to your configuration.
+(You should be able to leave this as default, if you haven’t configured anything before).
+
+php artisan key:generate - This sets the APP_KEY value inside of your .env file.
+
+php artisan config:cache - This will create a cache file.
+
+php artisan route:cache - This will clear your route cache. 
+
+These commands will install the necessary dependencies and files to run the application.
+
+
+To start the application or website:
+
+Open XAMPP Control Panel:
+Press the Start button for Apache and MySQL
+Press the Start button for MySQL
+
+Go to the database:
+http://localhost/phpymadmin
+
+Create a database named roadside_assistance (default value for DB_DATABASE in the .env file) or match the value of DB_DATABASE in your .env file of the project.
+
+Open a terminal and run the command below:
+php artisan migrate - This will create all the tables implemented into the database.
+
+Open another terminal and run the command below:
+php artisan serve
+
+Open another new terminal and run the command below:
+npm run watch
+
+To view the website:
+http://127.0.0.1:8000 or http://localhost:8000/ 
+
+
 ## About Laravel
 
 Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
